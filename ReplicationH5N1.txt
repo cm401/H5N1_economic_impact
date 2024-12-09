@@ -1,0 +1,492 @@
+Scenario 1;
+Method = Gragg;
+Steps = 2 4 6;
+automatic accuracy = no;
+subintervals = 1;
+
+! Standard GE closure: psave varies by region, pfactwld is numeraire
+Exogenous
+          pop
+          psaveslack pfactwld
+          profitslack incomeslack endwslack
+          cgdslack 
+          tradslack
+          ams atm atf ats atd
+          aosec aoreg avasec avareg
+          aintsec aintreg aintall
+          afcom afsec afreg afecom afesec afereg
+          aoall afall afeall
+          au dppriv dpgov dpsave
+          to tinc 
+          tpreg tm tms tx txs
+          qe
+          qesf
+          atall avaall tfe tfd tfm tgd tgm tpdall tpmall tid tim;
+Rest endogenous;
+
+Shock aoall("Rwmk","US") = -5;
+Shock to("Rwmk","Rwmk","US") = -0.041;
+
+Shock aoall("DrP","US") = -2.5;
+Shock to("DrP","DrP","US") = -0.041;
+
+Shock aoall("Cattle","US") = -2.5;
+Shock to("Cattle","Cattle","US") = -0.041;
+
+Shock afeall(ENDW,"DrP","US") = uniform -1;
+Shock afeall(ENDW,"Rwmk","US") = uniform -1;
+Shock afeall(ENDW,"Meats","US") = uniform -1;
+
+Subtotal aoall("Rwmk","US") =  rwmlk supply  ;
+Subtotal aoall("DrP","US") =  drp supply  ;
+Subtotal aoall("Cattle","US") =  cattle supply ;
+
+
+Subtotal to("DrP","DrP","US") to("Rwmk","Rwmk","US") to("Cattle","Cattle","US") = Subsidy ;
+
+Subtotal afeall(ENDW,"Rwmk","US") afeall(ENDW,"DrP","US") =   productivity ;
+Subtotal afeall(ENDW,"Meats","US") = prod Meats ;
+
+
+////////////////////////////////////////////////////////////////////////
+
+Scenario 2;
+Method = Gragg;
+Steps = 2 4 6;
+automatic accuracy = no;
+subintervals = 1;
+
+! Standard GE closure: psave varies by region, pfactwld is numeraire
+Exogenous
+          pop
+          psaveslack pfactwld
+          profitslack incomeslack endwslack
+          cgdslack 
+          tradslack
+          ams atm atf ats atd
+          aosec aoreg avasec avareg
+          aintsec aintreg aintall
+          afcom afsec afreg afecom afesec afereg
+          aoall afall afeall
+          au dppriv dpgov dpsave
+          to tinc 
+          tpreg tm tms tx txs
+          qe
+          qesf
+          atall avaall tfe tfd tfm tgd tgm tpdall tpmall tid tim;
+Rest endogenous;
+Shock tpdall("Rwmk","US") = 21.41; 
+Shock aoall("Rwmk","US") = -15;
+Shock to("Rwmk","Rwmk","US") = -0.082;
+
+
+Shock tpdall("Meats","US") = 6.83; 
+Shock aoall("Meats","US") = -5;
+Shock to("Meats","Meats","US") = -0.082;
+
+Shock tpdall("Drp","US") = 13.88; 
+Shock aoall("DrP","US") = -10;
+Shock to("DrP","DrP","US") = -0.082;
+
+Shock aoall("Cattle","US") = -10;
+Shock to("Cattle","Cattle","US") = -0.082;
+
+Shock afeall(ENDW,"DrP","US") = uniform -5;
+Shock afeall(ENDW,"Rwmk","US") = uniform -5;
+Shock afeall(ENDW,"Meats","US") = uniform -5;
+
+Shock tms("Meats","US",REG) = target% 19.73 from file tms.shk;
+Shock tms("DrP","US",REG) = target% 12.692 from file tms.shk; 
+Shock tms("Cattle","US",REG) = target% 14.18 from file tms.shk;
+Shock tms("Rwmk","US",REG) = target% 21.276 from file tms.shk;
+
+
+Subtotal aoall("Rwmk","US") =  rwmlk supply  ;
+Subtotal aoall("DrP","US") =  drp supply  ;
+Subtotal aoall("Cattle","US") =  cattle supply ;
+Subtotal aoall("Meats","US") =  Meats supply ;
+
+Subtotal tpdall("DrP","US") =  drp demand ;
+Subtotal tpdall("Rwmk","US") =  rwmk demand ;
+Subtotal tpdall("Meats","US") =  Meats demand ;
+
+Subtotal to("DrP","DrP","US") to("Rwmk","Rwmk","US") to("Cattle","Cattle","US") to("Meats","Meats","US") = Subsidy ;
+
+Subtotal afeall(ENDW,"Rwmk","US") afeall(ENDW,"DrP","US") =   productivity ;
+Subtotal afeall(ENDW,"Meats","US") = prod Meats ;
+
+Subtotal tms("Rwmk","US",REG) tms("DrP","US",REG)
+ tms("Meats","US",REG) tms("Cattle","US",REG) = Trade tax ;
+
+
+///////////////////////////////////////////////////////////////////////
+
+ Scenario 3;
+Method = Gragg;
+Steps = 2 4 6;
+automatic accuracy = yes;
+accuracy figures = 4;
+accuracy percent = 80;
+minimum subinterval length =  1.0E-0003;
+minimum subinterval fails = stop;
+accuracy criterion = Data;
+subintervals = 2;
+
+! Standard GE closure: psave varies by region, pfactwld is numeraire
+Exogenous
+          pop
+          psaveslack pfactwld
+          profitslack incomeslack endwslack
+          cgdslack 
+          tradslack
+          ams atm atf ats atd
+          aosec aoreg avasec avareg
+          aintsec aintreg aintall
+          afcom afsec afreg afecom afesec afereg
+          aoall afall afeall
+          au dppriv dpgov dpsave
+          to tinc 
+          tpreg tm tms tx txs
+          qe
+          qesf
+          atall avaall tfe tfd tfm tgd tgm tpdall tpmall tid tim;
+Rest endogenous;
+
+Shock tpdall("Rwmk","US") = 129.19;
+Shock aoall("Rwmk","US") = -50;
+Shock to("Rwmk","Rwmk","US") = -0.164;
+
+Shock tpdall("Meats","US") = 46.52;
+Shock aoall("Meats","US") = -20;
+Shock to("Meats","Meats","US") = -0.164;
+
+Shock tpdall("DrP","US") = 43.06;
+Shock aoall("DrP","US") = -20;
+Shock to("DrP","DrP","US") = -0.164;
+
+Shock aoall("Cattle","US") = -20;
+Shock to("Cattle","Cattle","US") = -0.164;
+
+Shock afeall(ENDW,"DrP","US") = uniform -10;
+Shock afeall(ENDW,"Rwmk","US") = uniform -10;
+Shock afeall(ENDW,"Meats","US") = uniform -10;
+
+Shock tms("Rwmk","US",REG) = target% 118.5 from file tms.shk; 
+Shock tms("DrP","US",REG) = target% 36.372 from file tms.shk; 
+Shock tms("Meats","US",REG) = target% 42.43 from file tms.shk; 
+Shock tms("Cattle","US",REG) = target% 64.824 from file tms.shk;
+
+Subtotal aoall("Rwmk","US") =  rwmlk supply  ;
+Subtotal aoall("DrP","US") =  drp supply  ;
+Subtotal aoall("Cattle","US") =  cattle supply ;
+Subtotal aoall("Meats","US") = Meat supply ;
+
+Subtotal tpdall("DrP","US") =  drp demand ;
+Subtotal tpdall("Rwmk","US") =  rwmk demand ;
+Subtotal tpdall("Meats","US") = Meat demand ;
+
+Subtotal afeall(ENDW,"Rwmk","US") afeall(ENDW,"DrP","US") =   productivity ;
+Subtotal afeall(ENDW,"Meats","US") = prod Meats ;
+
+Subtotal tms("Rwmk","US",REG) tms("DrP","US",REG)
+ tms("Meats","US",REG) tms("Cattle","US",REG) = Trade tax ;
+
+Subtotal to("DrP","DrP","US") to("Meats","Meats","US")
+ to("Rwmk","Rwmk","US") to("Cattle","Cattle","US")
+ = Subsidy ;
+
+
+
+//////////////////////////////////////////////////
+
+Aggregation GTAP 11B database
+
+
+! Section 1
+! One line for each new sector
+= = = = = =
+Cattle       & Cattle
+DrP          & Dairy
+Rwmk         & Raw milk
+Meats        & Meat Products
+OtherSec     & Others
+= = = = = =
+!
+! Section 2
+! One line for each old sector
+! Old sector at left, corresponding new sector on right
+= = = = = =
+pdr            Paddy rice                      & OtherSec
+wht            Wheat                           & OtherSec
+gro            Cereal grains nec               & OtherSec
+v_f            Vegetables, fruit, nuts         & OtherSec
+osd            Oil seeds                       & OtherSec
+c_b            Sugar cane, sugar beet          & OtherSec
+pfb            Plant-based fibers              & OtherSec
+ocr            Crops nec                       & OtherSec
+ctl            Bovine cattle, sheep and goats  & Cattle
+oap            Animal products nec             & OtherSec
+rmk            Raw milk                        & Rwmk
+wol            Wool, silk-worm cocoons         & OtherSec
+frs            Forestry                        & OtherSec
+fsh            Fishing                         & OtherSec
+coa            Coal                            & OtherSec
+oil            Oil                             & OtherSec
+gas            Gas                             & OtherSec
+oxt            Minerals nec                    & OtherSec
+cmt            Bovine meat products            & Meats
+omt            Meat products nec               & OtherSec
+vol            Vegetable oils and fats         & OtherSec
+mil            Dairy products                  & DrP
+pcr            Processed rice                  & OtherSec
+sgr            Sugar                           & OtherSec
+ofd            Food products nec               & OtherSec
+b_t            Beverages and tobacco products  & OtherSec
+tex            Textiles                        & OtherSec
+wap            Wearing apparel                 & OtherSec
+lea            Leather products                & OtherSec
+lum            Wood products                   & OtherSec
+ppp            Paper products, publishing      & OtherSec
+p_c            Petroleum, coal products        & OtherSec
+chm            Chemical products               & OtherSec
+bph            Basic pharmaceutical products   & OtherSec
+rpp            Rubber and plastic products     & OtherSec
+nmm            Mineral products nec            & OtherSec
+i_s            Ferrous metals                  & OtherSec
+nfm            Metals nec                      & OtherSec
+fmp            Metal products                  & OtherSec
+ele            Computer, electronic and optic  & OtherSec
+eeq            Electrical equipment            & OtherSec
+ome            Machinery and equipment nec     & OtherSec
+mvh            Motor vehicles and parts        & OtherSec
+otn            Transport equipment nec         & OtherSec
+omf            Manufactures nec                & OtherSec
+ely            Electricity                     & OtherSec
+gdt            Gas manufacture, distribution   & OtherSec
+wtr            Water                           & OtherSec
+cns            Construction                    & OtherSec
+trd            Trade                           & OtherSec
+afs            Accommodation, Food and servic  & OtherSec
+otp            Transport nec                   & OtherSec
+wtp            Water transport                 & OtherSec
+atp            Air transport                   & OtherSec
+whs            Warehousing and support activi  & OtherSec
+cmn            Communication                   & OtherSec
+ofi            Financial services nec          & OtherSec
+ins            Insurance                       & OtherSec
+rsa            Real estate activities          & OtherSec
+obs            Business services nec           & OtherSec
+ros            Recreational and other service  & OtherSec
+osg            Public Administration and defe  & OtherSec
+edu            Education                       & OtherSec
+hht            Human health and social work a  & OtherSec
+dwe            Dwellings                       & OtherSec
+= = = = = =
+!
+! Section 3
+! One line for each new region
+= = = = = =
+Australia    & Australia
+Canada       & Can
+US           & US
+Mexico       & Mex
+RestofWorld  & Rest of World
+= = = = = =
+!
+! Section 4
+! One line for each old region
+! Old region at left, corresponding new region on right
+= = = = = =
+aus            Australia                       & Australia
+nzl            New Zealand                     & RestofWorld
+xoc            Rest of Oceania                 & RestofWorld
+chn            China                           & RestofWorld
+hkg            China, Hong Kong SAR            & RestofWorld
+jpn            Japan                           & RestofWorld
+kor            Republic of Korea               & RestofWorld
+mng            Mongolia                        & RestofWorld
+twn            Taiwan Province of China        & RestofWorld
+xea            Rest of East Asia               & RestofWorld
+brn            Brunei Darussalam               & RestofWorld
+khm            Cambodia                        & RestofWorld
+idn            Indonesia                       & RestofWorld
+lao            Lao People's Democratic Republ  & RestofWorld
+mys            Malaysia                        & RestofWorld
+phl            Philippines                     & RestofWorld
+sgp            Singapore                       & RestofWorld
+tha            Thailand                        & RestofWorld
+vnm            Viet Nam                        & RestofWorld
+xse            Rest of Southeast Asia          & RestofWorld
+afg            Afghanistan                     & RestofWorld
+bgd            Bangladesh                      & RestofWorld
+ind            India                           & RestofWorld
+npl            Nepal                           & RestofWorld
+pak            Pakistan                        & RestofWorld
+lka            Sri Lanka                       & RestofWorld
+xsa            Rest of South Asia              & RestofWorld
+can            Canada                          & Canada
+usa            United States of America        & US
+mex            Mexico                          & Mexico
+xna            Rest of North America           & RestofWorld
+arg            Argentina                       & RestofWorld
+bol            Bolivia (Plurinational State o  & RestofWorld
+bra            Brazil                          & RestofWorld
+chl            Chile                           & RestofWorld
+col            Colombia                        & RestofWorld
+ecu            Ecuador                         & RestofWorld
+pry            Paraguay                        & RestofWorld
+per            Peru                            & RestofWorld
+ury            Uruguay                         & RestofWorld
+ven            Venezuela (Bolivarian Republic  & RestofWorld
+xsm            Rest of South America           & RestofWorld
+cri            Costa Rica                      & RestofWorld
+gtm            Guatemala                       & RestofWorld
+hnd            Honduras                        & RestofWorld
+nic            Nicaragua                       & RestofWorld
+pan            Panama                          & RestofWorld
+slv            El Salvador                     & RestofWorld
+xca            Rest of Central America         & RestofWorld
+dom            Dominican Republic              & RestofWorld
+hti            Haiti                           & RestofWorld
+jam            Jamaica                         & RestofWorld
+pri            Puerto Rico                     & RestofWorld
+tto            Trinidad and Tobago             & RestofWorld
+xcb            Caribbean                       & RestofWorld
+aut            Austria                         & RestofWorld
+bel            Belgium                         & RestofWorld
+bgr            Bulgaria                        & RestofWorld
+hrv            Croatia                         & RestofWorld
+cyp            Cyprus                          & RestofWorld
+cze            Czechia                         & RestofWorld
+dnk            Denmark                         & RestofWorld
+est            Estonia                         & RestofWorld
+fin            Finland                         & RestofWorld
+fra            France                          & RestofWorld
+deu            Germany                         & RestofWorld
+grc            Greece                          & RestofWorld
+hun            Hungary                         & RestofWorld
+irl            Ireland                         & RestofWorld
+ita            Italy                           & RestofWorld
+lva            Latvia                          & RestofWorld
+ltu            Lithuania                       & RestofWorld
+lux            Luxembourg                      & RestofWorld
+mlt            Malta                           & RestofWorld
+nld            Netherlands                     & RestofWorld
+pol            Poland                          & RestofWorld
+prt            Portugal                        & RestofWorld
+rou            Romania                         & RestofWorld
+svk            Slovakia                        & RestofWorld
+svn            Slovenia                        & RestofWorld
+esp            Spain                           & RestofWorld
+swe            Sweden                          & RestofWorld
+gbr            United Kingdom of Great Britai  & RestofWorld
+che            Switzerland                     & RestofWorld
+nor            Norway                          & RestofWorld
+xef            Rest of EFTA                    & RestofWorld
+alb            Albania                         & RestofWorld
+srb            Serbia                          & RestofWorld
+blr            Belarus                         & RestofWorld
+rus            Russian Federation              & RestofWorld
+ukr            Ukraine                         & RestofWorld
+xee            Rest of Eastern Europe          & RestofWorld
+xer            Rest of Europe                  & RestofWorld
+kaz            Kazakhstan                      & RestofWorld
+kgz            Kyrgyzstan                      & RestofWorld
+tjk            Tajikistan                      & RestofWorld
+uzb            Uzbekistan                      & RestofWorld
+xsu            Rest of Former Soviet Union     & RestofWorld
+arm            Armenia                         & RestofWorld
+aze            Azerbaijan                      & RestofWorld
+geo            Georgia                         & RestofWorld
+bhr            Bahrain                         & RestofWorld
+irn            Iran (Islamic Republic of)      & RestofWorld
+irq            Iraq                            & RestofWorld
+isr            Israel                          & RestofWorld
+jor            Jordan                          & RestofWorld
+kwt            Kuwait                          & RestofWorld
+lbn            Lebanon                         & RestofWorld
+omn            Oman                            & RestofWorld
+pse            Palestine                       & RestofWorld
+qat            Qatar                           & RestofWorld
+sau            Saudi Arabia                    & RestofWorld
+syr            Syrian Arab Republic            & RestofWorld
+tur            T rkiye                         & RestofWorld
+are            United Arab Emirates            & RestofWorld
+xws            Rest of Western Asia            & RestofWorld
+dza            Algeria                         & RestofWorld
+egy            Egypt                           & RestofWorld
+mar            Morocco                         & RestofWorld
+tun            Tunisia                         & RestofWorld
+xnf            Rest of North Africa            & RestofWorld
+ben            Benin                           & RestofWorld
+bfa            Burkina Faso                    & RestofWorld
+cmr            Cameroon                        & RestofWorld
+civ            C te d'Ivoire                   & RestofWorld
+gha            Ghana                           & RestofWorld
+gin            Guinea                          & RestofWorld
+mli            Mali                            & RestofWorld
+ner            Niger                           & RestofWorld
+nga            Nigeria                         & RestofWorld
+sen            Senegal                         & RestofWorld
+tgo            Togo                            & RestofWorld
+xwf            Rest of Western Africa          & RestofWorld
+caf            Central African Republic        & RestofWorld
+tcd            Chad                            & RestofWorld
+cog            Congo                           & RestofWorld
+cod            Democratic Republic of the Con  & RestofWorld
+gnq            Equatorial Guinea               & RestofWorld
+gab            Gabon                           & RestofWorld
+xac            South-Central Africa            & RestofWorld
+com            Comoros                         & RestofWorld
+eth            Ethiopia                        & RestofWorld
+ken            Kenya                           & RestofWorld
+mdg            Madagascar                      & RestofWorld
+mwi            Malawi                          & RestofWorld
+mus            Mauritius                       & RestofWorld
+moz            Mozambique                      & RestofWorld
+rwa            Rwanda                          & RestofWorld
+sdn            Sudan                           & RestofWorld
+tza            United Republic of Tanzania     & RestofWorld
+uga            Uganda                          & RestofWorld
+zmb            Zambia                          & RestofWorld
+zwe            Zimbabwe                        & RestofWorld
+xec            Rest of Eastern Africa          & RestofWorld
+bwa            Botswana                        & RestofWorld
+swz            Eswatini                        & RestofWorld
+nam            Namibia                         & RestofWorld
+zaf            South Africa                    & RestofWorld
+xsc            Rest of Southern African Custo  & RestofWorld
+xtw            Rest of the World               & RestofWorld
+= = = = = =
+!
+! Section 5
+! One line for each new factor
+! Four fields separated by three ampersands (&)
+! (a) name of new factor (max 12 letters)
+! (b) an ampersand "&"
+! (c) either "sluggish" or "mobile"
+! (d) an ampersand "&"
+! (e) for sluggish ETRAE number <0, for mobile "---"
+! (f) an ampersand "&"
+! optionally, (g) description of new factor (max 30 letters)
+= = = = = =
+Land         & sluggish &-1.000000 & 
+UnSkLab      &   mobile &     --- & 
+SkLab        &   mobile &     --- & 
+Capital      &   mobile &     --- & 
+NatRes       & sluggish &-0.001000 & 
+= = = = = =
+!
+! Section 6
+! One line for each old factor
+! Old factor at left, corresponding new factor on right
+= = = = = =
+Land           Land                            & Land
+tech_aspros    Technicians/AssocProfessional   & SkLab
+clerks         Clerks                          & UnSkLab
+service_shop   Service/Shop workers            & UnSkLab
+off_mgr_pros   Officials and Managers          & SkLab
+ag_othlowsk    Agricultural and Unskilled      & UnSkLab
+Capital        Capital                         & Capital
+NatlRes        Natural Resources               & NatRes
+= = = = = =

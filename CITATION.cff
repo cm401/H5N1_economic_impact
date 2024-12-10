@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use our results or software, please cite it as below."
+authors:
+- family-names: "Morel"
+  given-names: "Guillaume"
+  orcid: "https://orcid.org/0009-0001-5462-1027"
+- family-names: "Pham"
+  given-names: "Anh"
+  orcid: "https://orcid.org/0009-0005-7899-2374"
+- family-names: "Morgenstern"
+  given-names: "Christian"
+  orcid: "https://orcid.org/0000-0003-3735-1130"
+- family-names: "Forchini"
+  given-names: "Giovanni"
+  orcid: "https://orcid.org/0000-0002-1377-9469"
+- family-names: "Hauck"
+  given-names: "Katharina"
+  orcid: "https://orcid.org/0000-0003-3138-4169"
+title: "The impact of H5N1 on US domestic and international dairy markets"
+version: 0.1
+doi: 10.5281/zenodo.14339120
+date-released: 2024-12-09
+url: "https://github.com/cm401/H5N1_economic_impact"

@@ -12,10 +12,10 @@ CGE models are economic tools that use real economic data to estimate how an eco
 Below are the steps to replicate our results. Only a basic understanding of GTAP is required. You can refer to Burfisher (2021) book "Introduction to Computable General Equilibrium Models" for a great introduction to RunGTAP.
 
 After downloading and setting up RunGTAP and related software, you can implement our replication package (replicationH5N1.zip) using the GTAP model and RunGTAP. Please follow these steps:
-1-Use GTAPAgg2 to create an aggregation similar to the one displayed at Aggregation file, section named "agg9x10". You can input "agg9x10" directly via "Read aggregation scheme from file" and then click "Create aggregated database".
-2-Update the version of RunGTAP to reflect this new aggregation by clicking on "Version" and selecting "New". Our modules are the same as Burfisher (2021) (GTAPUV7, etc.) and can be found in Aggregation-> module and global settings. Now a test simulation will run.
-3-Copy, paste, or import (via Load) each scenario file (found in the scenario directory and GTAPRUN.xlsx) into the Shock tab. Don't forget to implement the "swap" in the closure, which can be found in the .tex file in the scenario directory. Finally, run each scenario one by one. Make sure to select the correct solution method, Gragg, in the Solve tab, then click Solve.
-4-Explore the results of each scenario individually using the Results tab, and compare them with our .xlsx files in the Data directory, which contain all our results.
+1-Use GTAPAgg2 to create an aggregation similar to the one displayed at Aggregation file, section named "agg9x10". You can input "agg9x10" directly via "Read aggregation scheme from file" and then click "Create aggregated database". \\
+2-Update the version of RunGTAP to reflect this new aggregation by clicking on "Version" and selecting "New". Our modules are the same as Burfisher (2021) (GTAPUV7, etc.) and can be found in Aggregation-> module and global settings. Now a test simulation will run. \\
+3-Copy, paste, or import (via Load) each scenario file (found in the scenario directory and GTAPRUN.xlsx) into the Shock tab. Don't forget to implement the "swap" in the closure, which can be found in the .tex file in the scenario directory. Finally, run each scenario one by one. Make sure to select the correct solution method, Gragg, in the Solve tab, then click Solve.\\
+4-Explore the results of each scenario individually using the Results tab, and compare them with our .xlsx files in the Data directory, which contain all our results.\\
 5-To run a sensitivity analysis (SA), go to Tools → Sensitivity → wrt to shock or parameter (depending on the goal). Enter the scenarios displayed in GTAPRUN.xlsx or the SA files in the SA directory. When reproducing the results, remember that for implementing the HDI, we use two times the standard deviation on each side of the mean value.
 
 ## Post processing of GTAP model output

@@ -25,4 +25,4 @@ After downloading and setting up RunGTAP and related software, you can implement
 
 ## Post processing of GTAP model output
 
-The output of the GTAP model is post-processed using R and the functions in `R\parse_GTAP_output.R`. We provide the model output in the `Data_Results` folder to reproduce all Figures.
+The output of the GTAP model is post-processed using R and the functions in `R\parse_GTAP_output.R`.  In the zip file we provide the model output in the `Data_Results` folder to reproduce all Figures.

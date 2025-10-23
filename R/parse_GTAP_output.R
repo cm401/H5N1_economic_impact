@@ -10,7 +10,7 @@ library(ggsci)
 library(grid)
 library(ggplot2)
 
-folder <- 'C:/Users/gumo0055/OneDrive - Umeå universitet/Document/DAEDALUS/H5N1 paper/Replication package/Data_Results/'
+folder <- ' '<insert_your_local_path_here>/Replication package/Data_Results/'
 
 global_s1 <- paste0(folder,'S1R1-28-04.xlsx')
 global_s2 <- paste0(folder,'S2R1-28-04.xlsx')
@@ -259,7 +259,7 @@ GDP_plot_1=gdp_plot+ Sector_plot_GDP+
   plot_annotation(tag_levels ='A') +
   plot_layout(design = layout_design1, guides = 'collect')
 
-folder_figure <- 'C:/Users/gumo0055/OneDrive - Umeå universitet/Document/DAEDALUS/H5N1 paper/Replication package/Figure/'
+folder_figure <- ' '<insert_your_local_path_here>/Replication package/Figure/'
 
 ggsave(
   filename = file.path(folder_figure, "GDP_plot_1.pdf"),

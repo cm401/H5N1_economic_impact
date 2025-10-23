@@ -28,9 +28,11 @@ After downloading and setting up RunGTAP and related software, you can implement
 The output of the GTAP model is post-processed using R and the functions in `R\parse_GTAP_output.R`.  The model output are diplay in the `Data_Results` folder. In the zip file, we provide the full replication procedure and all the necessary information to completely replicate the paper.
 
 ## Figures
-[Figure2.pdf](https://github.com/user-attachments/files/23093060/Figure2.pdf)
+![Figure2.pdf](https://github.com/user-attachments/files/23093060/Figure2.pdf)
 Potential economic impact of the H5N1 outbreak, \% deviation from pre-outbreak values. Note: Figure 2 shows GDP and output quantities in response to H5N1 (Supplementary Tables 4, and 7); shown in Panel B are point estimates, interquartile and total ranges of estimates for S2 and S3.
-[Figure4.pdf](https://github.com/user-attachments/files/23093059/Figure4.pdf)
+
+![Figure4.pdf](https://github.com/user-attachments/files/23093059/Figure4.pdf)
 Potential economic impact of the H5N1 outbreak, \% deviation from pre-outbreak values. Note: Figure 3 shows aggregate shocks on prices, consumption, investment, and exports (Supplementary Table 4).
-[Figure3.pdf](https://github.com/user-attachments/files/23093058/Figure3.pdf) 
+
+![Figure3.pdf](https://github.com/user-attachments/files/23093058/Figure3.pdf) 
 Potential economic impact of the H5N1 outbreak, \% deviation from pre-outbreak values. Figure 4 shows sectoral shocks on prices, exported quantities, employment, and investments (Supplementary Tables 5, 6, 8, and 9); shown are point estimates, interquartile and total ranges of estimates for S2 and S3.

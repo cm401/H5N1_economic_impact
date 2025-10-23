@@ -31,7 +31,7 @@ Below are the steps to replicate our results. Only a basic understanding of GTAP
 
 ## Post processing of GTAP model output
 
-The output of the GTAP model is post-processed using R and the functions in `R\parse_GTAP_output.R`.  The model output are display in the `Data_Results` folder. 
+The output of the GTAP model is post-processed using R and the functions in `R\parse_GTAP_output.R`.  The model output data are display in the `Data_Results` folder. 
 
 
 ## Figures

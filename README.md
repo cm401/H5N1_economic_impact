@@ -12,6 +12,7 @@ CGE models are economic tools that use real economic data to estimate how an eco
 Below are the steps to replicate our results. Only a basic understanding of GTAP is required. You can refer to Burfisher (2021) book "Introduction to Computable General Equilibrium Models" for a great introduction to RunGTAP.
 
 After downloading and setting up RunGTAP and related software, you can implement our replication package (replicationH5N1.zip) using the GTAP model and RunGTAP. Please follow these steps:
+
 1-Use GTAPAgg2 to create an aggregation similar to the one displayed at Aggregation file, section named "agg9x10". You can input "agg9x10" directly via "Read aggregation scheme from file" and then click "Create aggregated database".
 
 2-Update the version of RunGTAP to reflect this new aggregation by clicking on "Version" and selecting "New". Our modules are the same as Burfisher (2021) (GTAPUV7, etc.) and can be found in Aggregation-> module and global settings. Now a test simulation will run. 

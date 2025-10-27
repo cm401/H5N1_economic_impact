@@ -36,10 +36,10 @@ The output of the GTAP model is post-processed using R and the functions in `R\p
 
 ## Figures
 [View Figure2.pdf](https://github.com/user-attachments/files/23093060/Figure2.pdf)
-**Figure 2. Potential Impact of H5N1 outbreak on GDP and Output Quantities Across Countries** Note: Figure 2 shows GDP and output quantities in response to H5N1, expressed as \% deviation from pre-outbreak values (Supplementary Tables 4, and 7); shown in Panel B are point estimates, interquartile and total ranges of estimates for S2 and S3.
+**Figure 2. Potential Impact of H5N1 outbreak on GDP and Output Quantities Across Countries.** Note: Figure 2 shows GDP and output quantities in response to H5N1, expressed as \% deviation from pre-outbreak values (Supplementary Tables 4, and 7); shown in Panel B are point estimates, interquartile and total ranges of estimates for S2 and S3.
 
 [View Figure3.pdf](https://github.com/user-attachments/files/23093058/Figure3.pdf) 
-**Figure 3. Potential Aggregate Economic Impacts of H5N1 outbreak on Prices, Consumption, Investment, and Exports** Note: Figure 3 shows aggregate shocks on prices, consumption, investment, and exports in response to H5N1, expressed as \% deviation from pre-outbreak values (Supplementary Table 4).
+**Figure 3. Potential Aggregate Economic Impacts of H5N1 outbreak on Prices, Consumption, Investment, and Exports.** Note: Figure 3 shows aggregate shocks on prices, consumption, investment, and exports in response to H5N1, expressed as \% deviation from pre-outbreak values (Supplementary Table 4).
 
 [View Figure4.pdf](https://github.com/user-attachments/files/23093059/Figure4.pdf)
-**Figure 4. Potential Sectoral Economic Impacts of H5N1 outbreak on Prices, Exported Quantities, Employment, and Investments** Note: Figure 4 shows sectoral shocks on prices, exported quantities, employment, and investments in response to H5N1, expressed as \% deviation from pre-outbreak values (Supplementary Tables 5, 6, 8, and 9); shown are point estimates, interquartile and total ranges of estimates for S2 and S3.
+**Figure 4. Potential Sectoral Economic Impacts of H5N1 outbreak on Prices, Exported Quantities, Employment, and Investments.** Note: Figure 4 shows sectoral shocks on prices, exported quantities, employment, and investments in response to H5N1, expressed as \% deviation from pre-outbreak values (Supplementary Tables 5, 6, 8, and 9); shown are point estimates, interquartile and total ranges of estimates for S2 and S3.
